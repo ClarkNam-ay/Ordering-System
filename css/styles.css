@@ -1,0 +1,110 @@
+/* styles.css - simple clean styling */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+}
+body {
+  background: #f6f8fa;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  width: 360px;
+}
+h2 {
+  margin: 0 0 12px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover {
+  opacity: 0.95;
+}
+.alert {
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+.alert.error {
+  background: #ffecec;
+  color: #9b1c1c;
+  border: 1px solid #f5c2c2;
+}
+.alert.success {
+  background: #ecffe9;
+  color: #1f6f2f;
+  border: 1px solid #bfe9c6;
+}
+.muted {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+}
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #efefef;
+  color: #333;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.product-card {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+.small {
+  font-size: 13px;
+}
+.large {
+  font-size: 18px;
+  font-weight: 600;
+}
