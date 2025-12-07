@@ -1,7 +1,7 @@
 <?php
-require 'config.php';
+require '../config.php';
 if (!isset($_SESSION['user_id']) || empty($_SESSION['is_admin'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 
@@ -48,7 +48,7 @@ $csrf = $_SESSION['csrf_token'];
 <head>
     <meta charset="utf-8">
     <title>Manage Products — Admin</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <style>
     .toolbar {
         display: flex;
@@ -143,7 +143,7 @@ $csrf = $_SESSION['csrf_token'];
             <div class="products-grid">
                 <?php foreach ($products as $p): ?>
                 <div class="p-card" id="product-<?= $p['id'] ?>">
-                    <?php if ($p['image'] && file_exists(__DIR__ . '/uploads/' . $p['image'])): ?>
+                    <?php if ($p['image'] && file_exists(__DIR__ . '/../uploads/' . $p['image'])): ?>
                     <img src="uploads/<?= htmlspecialchars($p['image']) ?>" alt="<?= htmlspecialchars($p['name']) ?>">
                     <?php else: ?>
                     <div
@@ -173,7 +173,7 @@ $csrf = $_SESSION['csrf_token'];
 
             <div class="pagination">
                 <?php
-          $base = 'products_admin.php?q=' . urlencode($q) . '&page=';
+          $base = 'manage_products.php?q=' . urlencode($q) . '&page=';
           $start = max(1, $page - 3);
           $end = min($totalPages, $page + 3);
           if ($page > 1) echo '<a class="page-link" href="'.$base.($page-1).'">&laquo; Prev</a>';

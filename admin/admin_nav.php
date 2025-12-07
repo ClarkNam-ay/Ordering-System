@@ -30,9 +30,9 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
         <div class="user-menu">
             <?php if (isset($_SESSION['user_id'])): ?>
             <span class="user-name"><?= htmlspecialchars($_SESSION['user_name']) ?></span>
-            <a href="logout.php" class="logout-link">Logout</a>
+            <a href="../logout.php" class="logout-link">Logout</a>
             <?php else: ?>
-            <a href="login.php" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">Login</a>
+            <a href="../login.php" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">Login</a>
             <?php endif; ?>
         </div>
     </div>

@@ -1,9 +1,9 @@
 <?php
-require 'config.php';
+require '../config.php';
 
 // require login
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 // require admin
@@ -19,7 +19,7 @@ if (empty($_SESSION['is_admin'])) {
 <head>
     <meta charset="utf-8">
     <title>Admin Dashboard — Ordering System</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <style>
     .admin-actions {
         display: flex;

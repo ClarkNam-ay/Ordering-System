@@ -1,7 +1,7 @@
 <?php
-require 'config.php';
+require '../config.php';
 if (!isset($_SESSION['user_id']) || empty($_SESSION['is_admin'])) {
-    header('Location: login.php'); exit;
+    header('Location: ../login.php'); exit;
 }
 
 $errors = [];
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // generate unique filename
             $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
             $uploadedFileName = time() . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
-            $dest = __DIR__ . '/uploads/' . $uploadedFileName;
+            $dest = __DIR__ . '/../uploads/' . $uploadedFileName;
             if (!move_uploaded_file($file['tmp_name'], $dest)) {
                 $errors[] = 'Failed to move uploaded image.';
             }
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <title>Add Product — Admin</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>

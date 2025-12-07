@@ -1,7 +1,7 @@
 <?php
-require 'config.php';
+require '../config.php';
 if (!isset($_SESSION['user_id']) || empty($_SESSION['is_admin'])) {
-    header('Location: login.php'); exit;
+    header('Location: ../login.php'); exit;
 }
 
 $id = (int)($_GET['id'] ?? 0);
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
             $newImage = time() . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
-            $dest = __DIR__ . '/uploads/' . $newImage;
+            $dest = __DIR__ . '/../uploads/' . $newImage;
             if (!move_uploaded_file($file['tmp_name'], $dest)) {
                 $errors[] = 'Failed to move uploaded image.';
             }
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // if replaced image, delete old file
         if ($newImage && $product['image']) {
-            $oldPath = __DIR__ . '/uploads/' . $product['image'];
+            $oldPath = __DIR__ . '/../uploads/' . $product['image'];
             if (file_exists($oldPath)) @unlink($oldPath);
         }
 
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <title>Edit Product — Admin</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </label>
 
                 <label>Current image</label>
-                <?php if ($product['image'] && file_exists(__DIR__.'/uploads/'.$product['image'])): ?>
+                <?php if ($product['image'] && file_exists(__DIR__.'/../uploads/'.$product['image'])): ?>
                 <img src="uploads/<?= htmlspecialchars($product['image']) ?>" alt=""
                     style="max-width:200px;display:block;margin-bottom:8px;">
                 <?php else: ?>
