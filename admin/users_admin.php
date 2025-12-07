@@ -1,9 +1,9 @@
 <?php
-require 'config.php';
+require '../config.php';
 
 // require login + admin
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 if (empty($_SESSION['is_admin'])) {
@@ -57,7 +57,7 @@ $csrf = $_SESSION['csrf_token'];
 <head>
     <meta charset="utf-8">
     <title>Manage Users — Admin</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <style>
     .toolbar {
         display: flex;

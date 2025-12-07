@@ -70,7 +70,7 @@ $cart_count = array_sum($_SESSION['cart'] ?? []);
             <?php foreach ($products as $p): ?>
             <div class="product-card">
                 <?php if ($p['image']): ?>
-                <img src="<?= htmlspecialchars($p['image']) ?>" alt="<?= htmlspecialchars($p['name']) ?>"
+                <img src="../uploads/<?= htmlspecialchars($p['image']) ?>" alt="<?= htmlspecialchars($p['name']) ?>"
                     class="product-image">
                 <?php else: ?>
                 <div class="product-image"

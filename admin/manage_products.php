@@ -144,7 +144,8 @@ $csrf = $_SESSION['csrf_token'];
                 <?php foreach ($products as $p): ?>
                 <div class="p-card" id="product-<?= $p['id'] ?>">
                     <?php if ($p['image'] && file_exists(__DIR__ . '/../uploads/' . $p['image'])): ?>
-                    <img src="uploads/<?= htmlspecialchars($p['image']) ?>" alt="<?= htmlspecialchars($p['name']) ?>">
+                    <img src="../uploads/<?= htmlspecialchars($p['image']) ?>"
+                        alt="<?= htmlspecialchars($p['name']) ?>">
                     <?php else: ?>
                     <div
                         style="height:140px;display:flex;align-items:center;justify-content:center;background:#f4f4f4;border-radius:6px;color:#888;">

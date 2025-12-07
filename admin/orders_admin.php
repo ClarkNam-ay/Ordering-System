@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require '../config.php';
 $stmt = $pdo->query("SELECT * FROM orders ORDER BY created_at DESC");
 $orders = $stmt->fetchAll();
 ?>
@@ -9,7 +9,7 @@ $orders = $stmt->fetchAll();
 <head>
     <meta charset="utf-8">
     <title>Orders — Admin</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>
