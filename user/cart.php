@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <td>
                                 <div class="cart-item-info">
                                     <?php if ($it['image']): ?>
-                                    <img src="<?= htmlspecialchars($it['image']) ?>"
+                                    <img src="../uploads/<?= htmlspecialchars($it['image']) ?>"
                                         alt="<?= htmlspecialchars($it['name']) ?>" class="cart-item-image">
                                     <?php else: ?>
                                     <div class="cart-item-image"
@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Cart Actions -->
             <div class="cart-actions">
-                <a href="menu.php" class="btn-continue">
+                <a href="dashboard.php" class="btn-continue">
                     ← Continue Shopping
                 </a>
                 <button type="submit" name="update" class="btn-update">

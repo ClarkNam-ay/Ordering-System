@@ -13,9 +13,9 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
             <a href="dashboard.php" class="nav-link <?= $current_page === 'dashboard' ? 'active' : '' ?>">
                 📊 Dashboard
             </a>
-            <a href="menu.php" class="nav-link <?= $current_page === 'menu' ? 'active' : '' ?>">
+            <!-- <a href="menu.php" class="nav-link <?= $current_page === 'menu' ? 'active' : '' ?>">
                 📋 Menu
-            </a>
+            </a> -->
             <a href="cart.php" class="nav-link <?= $current_page === 'cart' ? 'active' : '' ?>">
                 🛒 View Cart
                 <?php if ($cart_count > 0): ?>
